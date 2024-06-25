@@ -1,0 +1,37 @@
+<div id="container">
+<div class="container">
+  <div class="menu">
+    <table class="menu-container" border="0">
+      <tr class="menu-row">
+        <td class="menu-logo" colspan="2" style="text-align: center;">
+          <img src="/assets/img/nulogo.png" alt="NU Logo" class="logo">
+        </td>
+      </tr>
+      <tr class="menu-row">
+        <td class="menu-btn">
+          <a routerLink="/first" class="non-style-link-menu" routerLinkActive="active"><p class="menu-text"><i class="fas fa-home"></i> Home</p></a>
+        </td>
+      </tr>
+      <tr class="menu-row">
+        <td class="menu-btn">
+          <a routerLink="/visitor" class="non-style-link-menu" routerLinkActive="active"><p class="menu-text"><i class="fas fa-book"></i> Visitor Log</p></a>
+        </td>
+      </tr>
+      <tr class="menu-row">
+        <td class="menu-btn">
+          <a routerLink="/visitor-list" class="non-style-link-menu" routerLinkActive="active"><p class="menu-text"><i class="fas fa-list"></i> Visitor Lists</p></a>
+        </td>
+      </tr>
+      <tr class="menu-row">
+        <td class="menu-btn">
+          <a routerLink="/logout" class="non-style-link-menu" routerLinkActive="active">
+            <p class="menu-text"><i class="fas fa-sign-out-alt"></i> Logout</p>
+          </a>
+        </td>
+    </table>
+  </div>
+  <div class="content" role="main">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+</div>

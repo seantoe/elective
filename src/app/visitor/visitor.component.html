@@ -1,0 +1,40 @@
+<div class="form-container">
+  <h2>Visitor Log</h2>
+  <form #form="ngForm" (ngSubmit)="onSubmit(form)" [ngClass]="{ 'submitted': form.submitted }" novalidate>
+    <input type="hidden" name="visitorId" [value]="service.formData.visitorId">
+    
+    <div class="form-group" [ngClass]="{ 'has-error': visitorName.invalid && form.submitted }">
+      <label for="name">Name</label>
+      <input type="text"
+        placeholder="Type full name here"
+        #visitorName="ngModel" name="visitorName"
+        [(ngModel)]="service.formData.visitorName" required>
+      <div *ngIf="visitorName.invalid && form.submitted" class="error">
+        Name is required.
+      </div>
+    </div>
+    
+    <div class="form-group" [ngClass]="{ 'has-error': visitDate.invalid && form.submitted }">
+      <label for="visitDate">Visit Date</label>
+      <input type="date"
+        #visitDate="ngModel" name="visitDate"
+        [(ngModel)]="service.formData.visitDate" required>
+      <div *ngIf="visitDate.invalid && form.submitted" class="error">
+        Visit date is required.
+      </div>
+    </div>
+    
+    <div class="form-group" [ngClass]="{ 'has-error': visitorPurpose.invalid && form.submitted }">
+      <label for="purpose">Purpose</label>
+      <input type="text"
+        placeholder="Type purpose of visit here"
+        #visitorPurpose="ngModel" name="visitorPurpose"
+        [(ngModel)]="service.formData.visitorPurpose" required>
+      <div *ngIf="visitorPurpose.invalid && form.submitted" class="error">
+        Purpose of visit is required.
+      </div>
+    </div>
+    
+    <button type="submit">Add Visitor</button>
+  </form>
+</div>

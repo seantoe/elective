@@ -1,0 +1,83 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  
+  .app-container {
+    display: flex;
+    height: 100vh; /* Full height of the viewport */
+    margin: 0;
+  }
+  
+  .menu-logo img {
+    max-width: 100px;
+    height: auto;
+    margin: 20px 0;
+  }
+
+  .menu {
+    width: 200px; /* Sidebar width */
+    background-color: #023b73; /* Background color of the sidebar */
+    border-right: 1px solid #ddd; /* Optional: border to separate sidebar from content */
+    padding: 20px 0; /* Padding for top and bottom only */
+    box-sizing: border-box; /* Include padding in width */
+    position: fixed; /* Fix it to the left edge */
+    left: 0;
+    top: 0;
+    bottom: 0;
+    overflow-y: auto; /* Scroll if the content is too long */
+  }
+  
+  .menu-container {
+    width: 100%;
+    padding-left: 20px; /* Padding to align the text inside the sidebar */
+    box-sizing: border-box;
+  }
+  
+  .menu-row {
+    margin-bottom: 10px; /* Spacing between rows */
+  }
+  
+  .menu-btn {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .menu-btn:hover {
+    background-color: #015bb6; /* Hover background color */
+  }
+  
+  .non-style-link-menu {
+    text-decoration: none;
+    color: #ffffff; /* Text color */
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+  
+  .non-style-link-menu.active {
+    font-weight: bold; /* Active link styling */
+  }
+  
+  .menu-text {
+    margin: 0; /* Remove default margin */
+    font-size: 16px;
+  }
+  
+  .content {
+    margin-left: 200px; /* Same width as the sidebar */
+    flex-grow: 1; /* Take up remaining space */
+    padding: 20px; /* Padding for content */
+    overflow-y: auto; /* Allow scrolling if content overflows */
+  }
+
+  #container{
+    width:100vw;
+    height:100vh;
+    background-image: url(../assets/img/nulaguna.jpg);
+    background-size: cover;
+  }

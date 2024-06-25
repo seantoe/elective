@@ -1,0 +1,27 @@
+<div class="visitor-list">
+    <div class="visitor-card">
+      <h3>Visitor List</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Visit Date</th>
+            <th>Purpose</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let v of service.list" (click)="populateForm(v)">
+            <td>{{v.visitorName}}</td>
+            <td>{{v.visitDate}}</td>
+            <td>{{v.visitorPurpose}}</td>
+            <td>
+              <span class="delete-icon" (click)="onDelete(v.visitorId)">
+                <i class="fa-solid fa-trash-can mouse-hover"></i>
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</div>
