@@ -1,0 +1,1 @@
+{"ast":null,"code":"export class Student {\n  constructor() {\n    this.id = 0;\n    this.studentId = \"\";\n    this.studentName = \"\";\n    this.violationDate = \"\";\n    this.violationDescription = \"\";\n  }\n\n}","map":null,"metadata":{},"sourceType":"module"}
