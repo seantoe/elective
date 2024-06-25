@@ -31,7 +31,7 @@ export class SignupComponent implements OnInit {
         next: (res) =>{
           alert(res.message)
           this.signupForm.reset();
-          this.router.navigate(['login']);
+          this.router.navigate(['']);
         },
         error:(err)=>{
           alert(err?.error.message)

@@ -13,6 +13,8 @@ import { VisitorListComponent } from './visitor-list/visitor-list.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { LogoutComponent } from './logout/logout.component';
+import { StudentComponent } from './student/student.component';
+import { StudentViolationComponent } from './student-violation/student-violation.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { LogoutComponent } from './logout/logout.component';
     LoginComponent,
     SignupComponent,
     LogoutComponent,
+    StudentComponent,
+    StudentViolationComponent,
   ],
   imports: [
     BrowserModule,

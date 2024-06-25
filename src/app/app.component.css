@@ -42,7 +42,7 @@ html, body {
   .menu-btn {
     display: flex;
     align-items: center;
-    padding: 20px;
+    padding: 30px;
     border-radius: 4px;
     transition: background-color 0.3s ease;
   }

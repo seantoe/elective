@@ -1,0 +1,52 @@
+<div class="form-container">
+    <h2>Student Log</h2>
+    <form #form="ngForm" (ngSubmit)="onSubmit(form)" [ngClass]="{ 'submitted': form.submitted }" novalidate>
+      <input type="hidden" name="id" [value]="service.formData.id">
+      
+      <div class="form-group" [ngClass]="{ 'has-error': studentId.invalid && form.submitted }">
+        <label for="studentId">Student ID</label>
+        <input type="text"
+          placeholder="Type student id here"
+          #studentId="ngModel" name="studentId"
+          [(ngModel)]="service.formData.studentId" required>
+        <div *ngIf="studentId.invalid && form.submitted" class="error">
+          Student ID is required.
+        </div>
+      </div>
+      
+      <div class="form-group" [ngClass]="{ 'has-error': studentName.invalid && form.submitted }">
+        <label for="studentName">Student Name</label>
+        <input type="text"
+          placeholder="Type student name here"
+          #studentName="ngModel" name="studentName"
+          [(ngModel)]="service.formData.studentName" required>
+        <div *ngIf="studentName.invalid && form.submitted" class="error">
+          Student Name is required.
+        </div>
+      </div>
+      
+      <div class="form-group" [ngClass]="{ 'has-error': violationDate.invalid && form.submitted }">
+        <label for="purpose">Violation Date</label>
+        <input type="date"
+          #violationDate="ngModel" name="violationDate"
+          [(ngModel)]="service.formData.violationDate" required>
+        <div *ngIf="violationDate.invalid && form.submitted" class="error">
+          Input Violation Date is required.
+        </div>
+      </div>
+
+      <div class="form-group" [ngClass]="{ 'has-error': violationDescription.invalid && form.submitted }">
+        <label for="violationDescription">Violation Description</label>
+        <input type="text"
+          placeholder="Type violation description here"
+          #violationDescription="ngModel" name="violationDescription"
+          [(ngModel)]="service.formData.violationDescription" required>
+        <div *ngIf="violationDescription.invalid && form.submitted" class="error">
+          Violation Description is required.
+        </div>
+      </div>
+      
+      <button type="submit">Add Student Violation</button>
+    </form>
+  </div>
+  
