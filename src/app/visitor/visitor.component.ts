@@ -39,10 +39,13 @@ export class VisitorComponent implements OnInit {
           next: res => {
             this.service.list = res as Visitor[]
             this.toastr.success('Inserted successfully','Visitor Details Registered')
-            this.refreshPage();
+            this.resetFormAndClearFields(form);
           },
-          error: err => { console.log(err) }
-        })
+          error: (err) => {
+            console.log(err);
+            this.toastr.error('Insert failed', 'Error');
+        }
+    });
   }
 
   updateRecord(form: NgForm){
@@ -51,26 +54,29 @@ export class VisitorComponent implements OnInit {
           next: res => {
             this.service.list = res as Visitor[]
             this.toastr.info('Updated successfully','Visitor Details Registered')
-            this.refreshPage();
+            this.resetFormAndClearFields(form);
           },
           error: err => { console.log(err) }
         })
   }
 
-  onDelete(id:number){
-    if(confirm('Are you sure you want to delete this record?'))
-    this.service.deleteVisitorDetail(id)
-    .subscribe({
-      next: res => {
-        this.service.list = res as Visitor[]
-        this.toastr.error('Deleted successfully','Visitor Details Registered')
-        this.refreshPage();
-      },
-      error: err => { console.log(err) }
-    })
+  onDelete(id: number) {
+    if (confirm('Are you sure you want to delete this record?')) {
+      this.service.deleteVisitorDetail(id).subscribe({
+        next: () => {
+          this.service.list = this.service.list.filter(v => v.visitorId !== id);
+          this.toastr.success('Deleted successfully', 'Visitor Details Registered');
+        },
+        error: (err) => {
+          console.log(err);
+          this.toastr.error('Delete failed', 'Error');
+        }
+      });
+    }
   }
 
-  refreshPage() {
-    location.reload();
+  resetFormAndClearFields(form: NgForm) {
+    this.service.resetForm(form);
+    form.resetForm();
   }
 }

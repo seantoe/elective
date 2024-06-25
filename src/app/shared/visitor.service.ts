@@ -9,7 +9,7 @@ import { NgForm } from '@angular/forms';
 })
 export class VisitorService {
 
-  private baseUrl:string = "https://localhost:7125/api/VisitorDetails/"
+  private baseUrl:string = "https://localhost:7125/api/VisitorDetails"
   list:Visitor[] =[];
   formData: Visitor = new Visitor()
   formSubmitted: boolean = false;
@@ -35,7 +35,7 @@ export class VisitorService {
   }
 
   deleteVisitorDetail(id:number){
-    return this.http.delete(this.baseUrl+'/'+ id)
+    return this.http.delete(this.baseUrl + '/' + id)
   }
 
   resetForm(form:NgForm){
